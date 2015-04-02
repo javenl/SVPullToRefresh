@@ -65,6 +65,13 @@ UIEdgeInsets scrollViewOriginalContentInsets;
     }
 }
 
+- (void)removeInfiniteScrolling {
+    if (self.infiniteScrollingView) {
+        [self.infiniteScrollingView removeFromSuperview];
+        self.infiniteScrollingView = nil;
+    }
+}
+
 - (void)triggerInfiniteScrolling {
     self.infiniteScrollingView.state = SVInfiniteScrollingStateTriggered;
     [self.infiniteScrollingView startAnimating];
